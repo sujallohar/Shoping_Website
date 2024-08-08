@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>23CEK018</title>
+    <style>
+    
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background:#8e8585;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #9d8787;
+        }
+
+        form {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+</head>
+<body>
+<div style="background-color: bisque; margin-left: 500px;margin-right: 500px;border-radius: 10px;margin-top: 100px;">
+    <header>
+        <h1>Smart Home Automation System</h1>
+    </header>
+
+    <nav>
+        <a href="inov_2.html">Home</a>
+        <a href="inov_2.html">Products</a>
+        <a href="inov_cart_5.html">Cart</a>
+        <a href="inov_about_4.html">About</a>
+        <a href="">Login</a>
+    </nav>
+
+    <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+        <p>Don't have an account? <button type="button" class="toggle-btn" onclick="toggleForm()">Register</button></p>
+    </form>
+
+    <form id="registration-form" style="display: none;">
+        <label for="reg-email">Email:</label>
+        <input type="email" id="reg-email" placeholder="Enter your email" required>
+
+        <label for="reg-password">Password:</label>
+        <input type="password" id="reg-password" placeholder="Enter your password" required>
+
+        <button type="submit">Register</button>
+        <p>Already have an account? <button type="button" class="toggle-btn" onclick="toggleForm()">Login</button></p>
+    </form>
+
+    <script>
+        function toggleForm() {
+            const loginForm = document.getElementById('login-form');
+            const registrationForm = document.getElementById('registration-form');
+
+            loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
+            registrationForm.style.display = registrationForm.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('login-form');
+
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // Get values from the form
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                // Basic login logic (replace with your actual logic)
+                if (email === 'user@example.com' && password === 'password') {
+                    alert('Login successful!');
+                } else {
+                    alert('Invalid email or password. Please try again.');
+                }
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
